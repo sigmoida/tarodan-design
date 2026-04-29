@@ -6,8 +6,6 @@ import {
 	BadgeCheck,
 	BarChart3,
 	Bell,
-	Box,
-	Briefcase,
 	Calendar,
 	Clock,
 	Check,
@@ -30,7 +28,6 @@ import {
 	List,
 	Lock,
 	LogOut,
-	MapPin,
 	Menu,
 	MessageSquare,
 	Package,
@@ -5665,7 +5662,6 @@ function ProfileSection({
 function ProfileMain({
 	onEdit,
 	onSwaps,
-	onCart,
 	onCollections,
 	onMyListings,
 	onFavorites,
@@ -5675,7 +5671,6 @@ function ProfileMain({
 }: {
 	onEdit?: () => void;
 	onSwaps?: () => void;
-	onCart?: () => void;
 	onCollections?: () => void;
 	onMyListings?: () => void;
 	onFavorites?: () => void;
@@ -8007,7 +8002,6 @@ export default function App() {
 				<ProfileMain
 					onEdit={() => navigate('profileEdit', 'profile')}
 					onSwaps={() => navigate('swaps', 'profile')}
-					onCart={() => navigate('cart')}
 					onCollections={() => navigate('collections', 'profile')}
 					onMyListings={() => navigate('myListings', 'profile')}
 					onFavorites={() => navigate('favorites', 'profile')}
