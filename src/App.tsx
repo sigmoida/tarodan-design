@@ -1627,26 +1627,6 @@ function WavyDivider({ from, to }: { from: string; to: string }) {
 	);
 }
 
-/** Hafifçe dönmüş, drop-shadow'lu yapışkan badge — section köşelerine süs */
-function StickerBadge({
-	children,
-	tone = 'bg-primary-500 text-primary-foreground',
-	rotate = '-rotate-6',
-	className,
-}: {
-	children: React.ReactNode;
-	tone?: string;
-	rotate?: string;
-	className?: string;
-}) {
-	return (
-		<span
-			className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-extrabold tracking-wider uppercase shadow-md ${tone} ${rotate} ${className ?? ''}`}>
-			{children}
-		</span>
-	);
-}
-
 /* ------------------------------------------------------------------ */
 /*  Home main                                                          */
 /* ------------------------------------------------------------------ */
