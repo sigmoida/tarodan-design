@@ -318,7 +318,7 @@ function Header({
 							onClick={onNotifications}
 							className='relative grid size-9 place-items-center rounded-lg text-secondary-900 hover:bg-neutral-100'>
 							<Bell className='size-5' />
-							<span className='absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-md bg-primary-500 px-1 text-[10px] font-bold text-primary-foreground'>
+							<span className='absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-md bg-primary-500 px-1 text-sm font-bold text-primary-foreground'>
 								3
 							</span>
 						</button>
@@ -347,7 +347,7 @@ function Header({
 							onClick={onCart}
 							className='relative grid size-9 place-items-center rounded-lg text-secondary-900 hover:bg-neutral-100'>
 							<ShoppingCart className='size-5' />
-							<span className='absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-md bg-primary-500 px-1 text-[10px] font-bold text-primary-foreground'>
+							<span className='absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-md bg-primary-500 px-1 text-sm font-bold text-primary-foreground'>
 								2
 							</span>
 						</button>
@@ -400,7 +400,7 @@ function Header({
 							onClick={onNotifications}
 							className='relative grid size-11 place-items-center rounded-lg text-primary-foreground hover:bg-background/15'>
 							<Bell className='size-5' />
-							<span className='absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-md bg-background px-1 text-[10px] font-bold text-primary-600'>
+							<span className='absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-md bg-background px-1 text-sm font-bold text-primary-600'>
 								3
 							</span>
 						</button>
@@ -429,7 +429,7 @@ function Header({
 							onClick={onCart}
 							className='relative grid size-11 place-items-center rounded-lg text-primary-foreground hover:bg-background/15'>
 							<ShoppingCart className='size-5' />
-							<span className='absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-md bg-background px-1 text-[10px] font-bold text-primary-600'>
+							<span className='absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-md bg-background px-1 text-sm font-bold text-primary-600'>
 								2
 							</span>
 						</button>
@@ -721,10 +721,10 @@ function CategoryCards() {
 					href='#'
 					className={`group flex flex-col gap-1 rounded-2xl ${c.tone} p-5 transition hover:scale-[1.02] sm:p-6`}>
 					<div
-						className={`font-display text-lg font-extrabold tracking-tight sm:text-xl ${c.text}`}>
+						className={`font-display text-xl font-extrabold tracking-tight sm:text-2xl ${c.text}`}>
 						{c.label}
 					</div>
-					<div className='text-xs font-medium text-secondary-900/60 sm:text-sm'>
+					<div className='text-sm font-medium text-secondary-900/60 sm:text-sm'>
 						{c.caption}
 					</div>
 				</a>
@@ -756,7 +756,7 @@ function ProductCard({
 				e.preventDefault();
 				onSelect?.();
 			}}
-			className='group flex flex-col gap-3 rounded-2xl bg-neutral-50 p-3 transition hover:bg-neutral-100'>
+			className='group flex flex-col gap-3 rounded-2xl bg-neutral-50 p-3 transition duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:bg-neutral-100 hover:shadow-[8px_8px_0_0_var(--primary-500)]'>
 			<div
 				className={`relative aspect-square overflow-hidden rounded-xl bg-gradient-to-br ${p.tone}`}>
 				<img
@@ -794,7 +794,7 @@ function ProductCard({
 			</div>
 
 			<div className='space-y-1.5 px-1 pb-1'>
-				<div className='flex items-center gap-3 text-[11px] font-semibold text-neutral-500 sm:text-xs'>
+				<div className='flex items-center gap-3 text-sm font-semibold text-neutral-500 sm:text-sm'>
 					<span className='flex items-center gap-1'>
 						<Heart className='size-3 text-primary-500 sm:size-3.5' />
 						{p.likes}
@@ -864,7 +864,7 @@ function ProductRow({ p, onSelect }: { p: Product; onSelect?: () => void }) {
 
 			{/* Meta + başlık + açıklama */}
 			<div className='flex min-w-0 flex-col gap-1.5'>
-				<div className='text-xs font-bold uppercase tracking-wider text-neutral-500'>
+				<div className='text-sm font-bold uppercase tracking-wider text-neutral-500'>
 					{brand}
 				</div>
 				<h3 className='line-clamp-2 text-lg font-semibold leading-snug text-secondary-900 group-hover:text-primary-600 sm:text-xl'>
@@ -873,7 +873,7 @@ function ProductRow({ p, onSelect }: { p: Product; onSelect?: () => void }) {
 				<div className='text-sm text-neutral-500'>
 					{p.scale} · 248 parça · 2024
 				</div>
-				<div className='flex items-center gap-3 text-xs font-semibold text-neutral-500'>
+				<div className='flex items-center gap-3 text-sm font-semibold text-neutral-500'>
 					<span className='flex items-center gap-1'>
 						<Heart className='size-3.5 text-primary-500' /> {p.likes}
 					</span>
@@ -899,9 +899,9 @@ function ProductRow({ p, onSelect }: { p: Product; onSelect?: () => void }) {
 							,{p.cents}
 						</span>
 					</div>
-					<div className='text-xs text-neutral-400 line-through'>₺1.499,00</div>
+					<div className='text-sm text-neutral-400 line-through'>₺1.499,00</div>
 				</div>
-				<span className='inline-flex w-fit items-center gap-1 rounded-md bg-success-50 px-2 py-1 text-xs font-semibold text-success-700'>
+				<span className='inline-flex w-fit items-center gap-1 rounded-md bg-success-50 px-2 py-1 text-sm font-semibold text-success-700'>
 					<Check
 						className='size-3'
 						strokeWidth={3}
@@ -1210,7 +1210,7 @@ function CollectionCard({
 					{c.name}
 				</h3>
 				<p className='line-clamp-2 text-sm text-neutral-500'>{c.desc}</p>
-				<div className='flex items-center justify-between gap-2 pt-1 text-xs'>
+				<div className='flex items-center justify-between gap-2 pt-1 text-sm'>
 					<div className='flex min-w-0 items-center gap-2 text-neutral-500'>
 						<div className='grid size-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary-300 to-primary-500 text-primary-foreground'>
 							<User
@@ -1334,7 +1334,7 @@ function WeeklyCard({
 						<div className='text-lg font-extrabold text-secondary-900'>
 							{m.value}
 						</div>
-						<div className='mt-0.5 text-[11px] font-medium text-neutral-500'>
+						<div className='mt-0.5 text-sm font-medium text-neutral-500'>
 							{m.label}
 						</div>
 					</div>
@@ -1436,7 +1436,7 @@ function PromoBanner() {
 		<section className='grid gap-4 sm:gap-6 md:grid-cols-2'>
 			<div className='flex flex-col items-start gap-4 rounded-2xl bg-gradient-to-br from-primary-800 to-primary-400 p-6 text-primary-foreground sm:flex-row sm:items-center sm:gap-6 sm:p-8'>
 				<div className='flex-1'>
-					<div className='text-xs font-medium uppercase tracking-wider text-primary-foreground/80 sm:text-sm'>
+					<div className='text-sm font-medium uppercase tracking-wider text-primary-foreground/80 sm:text-sm'>
 						Koleksiyoner mi olmak istiyorsun?
 					</div>
 					<h3 className='mt-1 min-h-[2lh] font-display text-xl font-extrabold tracking-tight sm:text-3xl'>
@@ -1451,7 +1451,7 @@ function PromoBanner() {
 			</div>
 			<div className='flex flex-col items-start gap-4 rounded-2xl bg-gradient-to-br from-secondary-900 to-secondary-400 p-6 text-primary-foreground sm:flex-row sm:items-center sm:gap-6 sm:p-8'>
 				<div className='flex-1'>
-					<div className='text-xs font-medium uppercase tracking-wider text-primary-foreground/60 sm:text-sm'>
+					<div className='text-sm font-medium uppercase tracking-wider text-primary-foreground/60 sm:text-sm'>
 						Mağazanı aç
 					</div>
 					<h3 className='mt-1 min-h-[2lh] font-display text-xl font-extrabold tracking-tight sm:text-3xl'>
@@ -1498,7 +1498,7 @@ function BrandsStrip() {
 							loading='lazy'
 							className='size-7 shrink-0 object-contain'
 						/>
-						<span className='line-clamp-1 text-[11px] font-extrabold tracking-wider text-secondary-900/70 transition group-hover:text-primary-600 sm:text-xs'>
+						<span className='line-clamp-1 text-sm font-extrabold tracking-wider text-secondary-900/70 transition group-hover:text-primary-600 sm:text-sm'>
 							{b.name}
 						</span>
 					</a>
@@ -1541,52 +1541,60 @@ function Footer() {
 		},
 	];
 	return (
-		<footer className='mt-12 bg-secondary-900 text-neutral-300 sm:mt-20'>
-			<div className='mx-auto max-w-[1280px] px-4 py-10 sm:px-6 sm:py-14'>
-				<div className='grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]'>
-					<div className='space-y-4'>
-						<img
-							src={logoLightUrl}
-							alt='Tarodan'
-							className='h-10 w-auto rounded-lg'
-						/>
-						<p className='max-w-xs text-sm text-neutral-400'>
-							Türkiye'nin en büyük diecast model araba pazarı. Koleksiyonerleri
-							ve satıcıları aynı çatı altında buluşturuyoruz.
-						</p>
-						<div className='flex gap-2 pt-2'>
-							{['FB', 'IG', 'X', 'YT'].map((s) => (
-								<a
-									key={s}
-									href='#'
-									className='grid size-9 place-items-center rounded-lg bg-background/10 text-xs font-bold text-primary-foreground hover:bg-primary-500'>
-									{s}
-								</a>
-							))}
-						</div>
-					</div>
-					{cols.map((c) => (
-						<div key={c.title}>
-							<h4 className='mb-3 text-sm font-bold uppercase tracking-wider text-primary-foreground'>
-								{c.title}
-							</h4>
-							<ul className='space-y-2 text-sm'>
-								{c.links.map((l) => (
-									<li key={l}>
-										<a
-											className='hover:text-primary-400'
-											href='#'>
-											{l}
-										</a>
-									</li>
+		<footer className='mt-12 sm:mt-20'>
+			<svg
+				viewBox='0 0 1440 80'
+				preserveAspectRatio='none'
+				className='block h-12 w-full fill-secondary-900 sm:h-16'>
+				<path d='M0,40 C240,90 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z' />
+			</svg>
+			<div className='bg-secondary-900 text-neutral-300'>
+				<div className='mx-auto max-w-[1280px] px-4 py-10 sm:px-6 sm:py-14'>
+					<div className='grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]'>
+						<div className='space-y-4'>
+							<img
+								src={logoLightUrl}
+								alt='Tarodan'
+								className='h-10 w-auto rounded-lg'
+							/>
+							<p className='max-w-xs text-sm text-neutral-400'>
+								Türkiye'nin en büyük diecast model araba pazarı.
+								Koleksiyonerleri ve satıcıları aynı çatı altında buluşturuyoruz.
+							</p>
+							<div className='flex gap-2 pt-2'>
+								{['FB', 'IG', 'X', 'YT'].map((s) => (
+									<a
+										key={s}
+										href='#'
+										className='grid size-9 place-items-center rounded-lg bg-background/10 text-sm font-bold text-primary-foreground hover:bg-primary-500'>
+										{s}
+									</a>
 								))}
-							</ul>
+							</div>
 						</div>
-					))}
-				</div>
-				<div className='mt-12 flex flex-col items-center justify-between gap-3 border-t border-background/10 pt-6 text-xs text-neutral-500 sm:flex-row'>
-					<p>© 2026 Tarodan. Tüm hakları saklıdır.</p>
-					<p>Made with care for collectors.</p>
+						{cols.map((c) => (
+							<div key={c.title}>
+								<h4 className='mb-3 text-sm font-bold uppercase tracking-wider text-primary-foreground'>
+									{c.title}
+								</h4>
+								<ul className='space-y-2 text-sm'>
+									{c.links.map((l) => (
+										<li key={l}>
+											<a
+												className='hover:text-primary-400'
+												href='#'>
+												{l}
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+					<div className='mt-12 flex flex-col items-center justify-between gap-3 border-t border-background/10 pt-6 text-sm text-neutral-500 sm:flex-row'>
+						<p>© 2026 Tarodan. Tüm hakları saklıdır.</p>
+						<p>Made with care for collectors.</p>
+					</div>
 				</div>
 			</div>
 		</footer>
@@ -1744,7 +1752,7 @@ function FilterGroup({
 }) {
 	return (
 		<div className='space-y-3'>
-			<h3 className='text-xs font-bold uppercase tracking-wider text-secondary-900'>
+			<h3 className='text-sm font-bold uppercase tracking-wider text-secondary-900'>
 				{title}
 			</h3>
 			{searchable ? (
@@ -1774,7 +1782,7 @@ function FilterGroup({
 							<span className='flex-1 font-medium text-secondary-900'>
 								{i.name}
 							</span>
-							<span className='text-xs text-neutral-400'>{i.count}</span>
+							<span className='text-sm text-neutral-400'>{i.count}</span>
 						</label>
 					</li>
 				))}
@@ -1795,7 +1803,7 @@ function FilterSidebar() {
 					<span className='inline-block h-5 w-1 rounded-full bg-primary-500' />
 					Filtreler
 				</h2>
-				<button className='text-xs font-semibold text-primary-600 hover:text-primary-700'>
+				<button className='text-sm font-semibold text-primary-600 hover:text-primary-700'>
 					Temizle
 				</button>
 			</div>
@@ -1820,7 +1828,7 @@ function FilterSidebar() {
 			/>
 			<FilterDivider />
 			<div className='space-y-3'>
-				<h3 className='text-xs font-bold uppercase tracking-wider text-secondary-900'>
+				<h3 className='text-sm font-bold uppercase tracking-wider text-secondary-900'>
 					Fiyat
 				</h3>
 				<div className='flex items-center gap-2'>
@@ -1837,7 +1845,7 @@ function FilterSidebar() {
 				<Button
 					size='sm'
 					variant='outline'
-					className='h-8 w-full text-xs'>
+					className='h-8 w-full text-sm'>
 					Uygula
 				</Button>
 			</div>
@@ -1913,12 +1921,12 @@ function ListingMain({ onSelectProduct }: { onSelectProduct?: () => void }) {
 							{activeChips.map((c) => (
 								<button
 									key={c}
-									className='inline-flex items-center gap-1.5 rounded-md bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700 hover:bg-primary-100'>
+									className='inline-flex items-center gap-1.5 rounded-md bg-primary-50 px-2.5 py-1 text-sm font-semibold text-primary-700 hover:bg-primary-100'>
 									{c}
 									<X className='size-3' />
 								</button>
 							))}
-							<button className='ml-1 text-xs font-semibold text-neutral-500 underline-offset-2 hover:text-primary-600 hover:underline'>
+							<button className='ml-1 text-sm font-semibold text-neutral-500 underline-offset-2 hover:text-primary-600 hover:underline'>
 								Tümünü temizle
 							</button>
 						</div>
@@ -2161,7 +2169,7 @@ function DetailMain({
 
 			{/* Üst banner — başlık + rating + likes/views (full width) */}
 			<div className='mb-6'>
-				<div className='text-xs font-bold uppercase tracking-wider text-neutral-500'>
+				<div className='text-sm font-bold uppercase tracking-wider text-neutral-500'>
 					{detailProduct.brand}
 				</div>
 				<h1 className='font-display mt-1 text-2xl font-extrabold leading-tight tracking-tight text-secondary-900 sm:text-3xl md:text-4xl'>
@@ -2272,7 +2280,7 @@ function DetailMain({
 						<dl className='grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4'>
 							{detailSpecs.map((s) => (
 								<div key={s.label}>
-									<dt className='text-[11px] font-bold uppercase tracking-wider text-neutral-500'>
+									<dt className='text-sm font-bold uppercase tracking-wider text-neutral-500'>
 										{s.label}
 									</dt>
 									<dd className='mt-0.5 font-semibold text-secondary-900'>
@@ -2333,7 +2341,7 @@ function DetailMain({
 											<div className='truncate font-semibold text-secondary-900'>
 												{r.name}
 											</div>
-											<div className='text-xs text-neutral-500'>{r.when}</div>
+											<div className='text-sm text-neutral-500'>{r.when}</div>
 										</div>
 										<StarRow
 											value={r.stars}
@@ -2371,7 +2379,7 @@ function DetailMain({
 								</Badge>
 							</div>
 						</div>
-						<span className='inline-flex w-fit items-center gap-1 rounded-md bg-success-50 px-2 py-1 text-xs font-semibold text-success-700'>
+						<span className='inline-flex w-fit items-center gap-1 rounded-md bg-success-50 px-2 py-1 text-sm font-semibold text-success-700'>
 							<Check
 								className='size-3'
 								strokeWidth={3}
@@ -2379,32 +2387,39 @@ function DetailMain({
 							Stokta
 						</span>
 						<div className='flex flex-col gap-2'>
-							<button className='inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary-500 px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-600'>
+							<Button
+								size='lg'
+								className='h-12'>
 								<ShoppingCart className='size-5' /> Sepete Ekle
-							</button>
-							<button
+							</Button>
+							<Button
 								type='button'
 								onClick={onCheckout}
-								className='inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-background px-5 text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'>
+								variant='outline'
+								size='lg'
+								className='h-12'>
 								<Zap
 									className='size-5'
 									strokeWidth={2.4}
 								/>{' '}
 								Hemen Al
-							</button>
+							</Button>
 						</div>
 						<div className='flex gap-2'>
-							<button
+							<Button
 								type='button'
 								onClick={onSwapOffer}
-								className='inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-neutral-200 bg-background text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'>
+								variant='outline'
+								className='h-10 flex-1'>
 								<Repeat className='size-4' /> Takas
-							</button>
-							<button className='inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-neutral-200 bg-background text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'>
+							</Button>
+							<Button
+								variant='outline'
+								className='h-10 flex-1'>
 								Teklif Ver
-							</button>
+							</Button>
 						</div>
-						<div className='flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-3 text-xs text-neutral-500'>
+						<div className='flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-3 text-sm text-neutral-500'>
 							<span className='flex items-center gap-1.5'>
 								<Truck className='size-3.5 text-secondary-900' /> Hızlı kargo
 							</span>
@@ -2432,7 +2447,7 @@ function DetailMain({
 									</span>
 									<BadgeCheck className='size-4 shrink-0 text-success-500' />
 								</div>
-								<div className='flex items-center gap-2 text-xs text-neutral-500'>
+								<div className='flex items-center gap-2 text-sm text-neutral-500'>
 									<span>İstanbul</span>
 									<span>·</span>
 									<span>84 ilan</span>
@@ -2444,9 +2459,11 @@ function DetailMain({
 								</div>
 							</div>
 						</div>
-						<button className='inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-background text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'>
+						<Button
+							variant='outline'
+							className='h-10 w-full'>
 							<MessageSquare className='size-4' /> Mesaj Gönder
-						</button>
+						</Button>
 					</div>
 				</aside>
 			</div>
@@ -2704,7 +2721,7 @@ function CollectionDetailMain({
 								</span>
 								<BadgeCheck className='size-4 shrink-0 text-success-500' />
 							</div>
-							<div className='flex items-center gap-1.5 text-xs text-neutral-500'>
+							<div className='flex items-center gap-1.5 text-sm text-neutral-500'>
 								<span>@ahmet.kara</span>
 								<span>·</span>
 								<span className='flex items-center gap-0.5'>
@@ -2724,7 +2741,7 @@ function CollectionDetailMain({
 								<div className='text-lg font-extrabold text-secondary-900'>
 									{s.value}
 								</div>
-								<div className='mt-0.5 text-[11px] font-medium text-neutral-500'>
+								<div className='mt-0.5 text-sm font-medium text-neutral-500'>
 									{s.label}
 								</div>
 							</div>
@@ -2733,16 +2750,21 @@ function CollectionDetailMain({
 
 					{/* Aksiyonlar */}
 					<div className='mt-auto space-y-2'>
-						<button className='inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary-500 px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-600'>
+						<Button
+							size='lg'
+							className='h-12 w-full'>
 							<UserPlus
 								className='size-4'
 								strokeWidth={2.4}
 							/>{' '}
 							Koleksiyonu Takip Et
-						</button>
-						<button className='inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-background px-5 text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'>
+						</Button>
+						<Button
+							variant='outline'
+							size='lg'
+							className='h-11 w-full'>
 							<MessageSquare className='size-4' /> Sahibine Mesaj Gönder
-						</button>
+						</Button>
 					</div>
 				</div>
 			</section>
@@ -3191,7 +3213,7 @@ function ManufacturerCard({ m }: { m: Manufacturer }) {
 						{m.premium ? <Badge variant='default'>Premium</Badge> : null}
 					</div>
 					<p className='mt-1 line-clamp-2 text-sm text-neutral-600'>{m.desc}</p>
-					<div className='mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-neutral-500'>
+					<div className='mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500'>
 						<span className='flex items-center gap-1'>
 							<Calendar className='size-3.5' /> {m.founded}
 						</span>
@@ -3265,7 +3287,7 @@ function ManufacturerCard({ m }: { m: Manufacturer }) {
 							</a>
 						</div>
 					</div>
-					<div className='mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-neutral-200 pt-4 text-xs'>
+					<div className='mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-neutral-200 pt-4 text-sm'>
 						<div>
 							<span className='font-bold text-secondary-900'>Kuruluş: </span>
 							<span className='text-neutral-600'>
@@ -3327,7 +3349,7 @@ function ManufacturersMain() {
 							<div className='text-2xl font-extrabold text-secondary-900 sm:text-3xl'>
 								{s.value}
 							</div>
-							<div className='mt-1 text-xs font-medium text-neutral-500'>
+							<div className='mt-1 text-sm font-medium text-neutral-500'>
 								{s.label}
 							</div>
 						</div>
@@ -3350,8 +3372,8 @@ function ManufacturersMain() {
 							key={f}
 							className={
 								i === 0
-									? 'rounded-lg bg-primary-500 px-3.5 py-2 text-xs font-semibold text-primary-foreground'
-									: 'rounded-lg border border-neutral-200 bg-background px-3.5 py-2 text-xs font-semibold text-secondary-900 transition hover:border-primary-300 hover:text-primary-600'
+									? 'rounded-lg bg-primary-500 px-3.5 py-2 text-sm font-semibold text-primary-foreground'
+									: 'rounded-lg border border-neutral-200 bg-background px-3.5 py-2 text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:text-primary-600'
 							}>
 							{f}
 						</button>
@@ -3444,7 +3466,7 @@ function CartMain({
 									<h3 className='truncate text-base font-bold text-secondary-900'>
 										{item.title}
 									</h3>
-									<div className='text-xs text-neutral-500'>
+									<div className='text-sm text-neutral-500'>
 										Satıcı:{' '}
 										<span className='font-semibold text-secondary-900'>
 											{item.seller}
@@ -3539,7 +3561,7 @@ function FormField({
 				{required ? <span className='ml-0.5 text-primary-600'>*</span> : null}
 			</label>
 			{children}
-			{hint ? <p className='text-xs text-neutral-500'>{hint}</p> : null}
+			{hint ? <p className='text-sm text-neutral-500'>{hint}</p> : null}
 		</div>
 	);
 }
@@ -3558,7 +3580,7 @@ function ToggleRow({
 		<div className='flex items-start justify-between gap-4 rounded-xl bg-background p-4'>
 			<div className='min-w-0'>
 				<div className='text-sm font-semibold text-secondary-900'>{label}</div>
-				<div className='mt-0.5 text-xs text-neutral-500'>{caption}</div>
+				<div className='mt-0.5 text-sm text-neutral-500'>{caption}</div>
 			</div>
 			<button
 				type='button'
@@ -3647,7 +3669,7 @@ function CreateListingMain() {
 									style={{ width: '2.5%' }}
 								/>
 							</div>
-							<div className='mt-1.5 text-xs text-warning-600'>
+							<div className='mt-1.5 text-sm text-warning-600'>
 								195 ilan hakkın kaldı
 							</div>
 						</div>
@@ -3857,7 +3879,7 @@ function CreateListingMain() {
 							<span className='text-sm font-semibold text-secondary-900'>
 								Görsel yüklemek için tıklayın
 							</span>
-							<span className='text-xs text-neutral-500'>0 / 10 yüklendi</span>
+							<span className='text-sm text-neutral-500'>0 / 10 yüklendi</span>
 						</button>
 					</section>
 				</div>
@@ -3944,7 +3966,7 @@ function OrderSummary() {
 						<div className='truncate text-sm font-semibold text-secondary-900'>
 							Tamiya 1950s Vintage Classic
 						</div>
-						<div className='text-xs text-neutral-500'>565,08 TL</div>
+						<div className='text-sm text-neutral-500'>565,08 TL</div>
 					</div>
 				</div>
 				<div className='space-y-2 border-t border-neutral-200 pt-3 text-sm text-neutral-600'>
@@ -4013,7 +4035,7 @@ function AddressStep({ onNext }: { onNext: () => void }) {
 					checked={address === 'default'}
 					onClick={() => setAddress('default')}>
 					<div className='font-bold text-secondary-900'>Ahmet Koleksiyoncu</div>
-					<div className='mt-0.5 text-xs text-neutral-500'>
+					<div className='mt-0.5 text-sm text-neutral-500'>
 						+90 555 000 0100
 					</div>
 					<div className='mt-1 text-sm text-secondary-900'>
@@ -4085,7 +4107,7 @@ function PaymentStep({
 								<div className='text-sm font-semibold text-secondary-900'>
 									PayTR ile Öde
 								</div>
-								<div className='mt-0.5 text-xs text-neutral-500'>
+								<div className='mt-0.5 text-sm text-neutral-500'>
 									Kredi kartı ile güvenli ödeme
 								</div>
 							</div>
@@ -4143,7 +4165,7 @@ function PaymentStep({
 						Bu kartı gelecekteki alışverişlerim için kaydet
 					</span>
 				</label>
-				<p className='flex items-center gap-1.5 text-xs text-success-700'>
+				<p className='flex items-center gap-1.5 text-sm text-success-700'>
 					<ShieldCheck className='size-3.5' /> 256-bit SSL ile şifrelenmiş
 					güvenli ödeme
 				</p>
@@ -4203,7 +4225,7 @@ function ConfirmStep({ onBack }: { onBack: () => void }) {
 						<div className='text-base font-bold text-secondary-900'>
 							Tamiya 1950s Vintage Classic
 						</div>
-						<div className='text-xs text-neutral-500'>
+						<div className='text-sm text-neutral-500'>
 							Satıcı: Mehmet Diecast
 						</div>
 					</div>
@@ -4213,7 +4235,7 @@ function ConfirmStep({ onBack }: { onBack: () => void }) {
 				</div>
 
 				<div className='rounded-xl bg-background p-4'>
-					<div className='text-xs font-bold uppercase tracking-wider text-neutral-500'>
+					<div className='text-sm font-bold uppercase tracking-wider text-neutral-500'>
 						Teslimat Adresi
 					</div>
 					<div className='mt-1.5 text-sm text-secondary-900'>
@@ -4223,7 +4245,7 @@ function ConfirmStep({ onBack }: { onBack: () => void }) {
 				</div>
 
 				<div className='rounded-xl bg-background p-4'>
-					<div className='text-xs font-bold uppercase tracking-wider text-neutral-500'>
+					<div className='text-sm font-bold uppercase tracking-wider text-neutral-500'>
 						Ödeme Yöntemi
 					</div>
 					<div className='mt-1.5 text-sm font-semibold text-secondary-900'>
@@ -4237,7 +4259,7 @@ function ConfirmStep({ onBack }: { onBack: () => void }) {
 						<div className='text-sm font-bold text-success-700'>
 							Güvenli Alışveriş
 						</div>
-						<div className='mt-0.5 text-xs text-success-600'>
+						<div className='mt-0.5 text-sm text-success-600'>
 							Ödemeniz şifreli olarak iletilir. Ürün elinize ulaşana kadar
 							ödemeniz güvende tutulur.
 						</div>
@@ -4560,7 +4582,7 @@ function SwapItemThumb({ item }: { item: SwapItemData }) {
 				<div className='truncate text-sm font-semibold text-secondary-900'>
 					{item.title}
 				</div>
-				<div className='truncate text-xs text-neutral-500'>{item.qty}</div>
+				<div className='truncate text-sm text-neutral-500'>{item.qty}</div>
 			</div>
 		</div>
 	);
@@ -4569,7 +4591,7 @@ function SwapItemThumb({ item }: { item: SwapItemData }) {
 function SwapItemTotal({ amount }: { amount: string }) {
 	return (
 		<div>
-			<div className='text-xs font-medium text-neutral-500'>Toplam Değer</div>
+			<div className='text-sm font-medium text-neutral-500'>Toplam Değer</div>
 			<div className='mt-0.5 text-lg font-extrabold text-secondary-900'>
 				{amount} TL
 			</div>
@@ -4588,7 +4610,7 @@ function SwapCard({ s, onSelect }: { s: Swap; onSelect?: () => void }) {
 						<span className='inline-block h-5 w-1 shrink-0 rounded-full bg-primary-500' />
 						<span className='truncate'>{s.direction}</span>
 					</h2>
-					<div className='mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-3 text-xs'>
+					<div className='mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-3 text-sm'>
 						<span className='font-mono text-neutral-500'>{s.id}</span>
 						<span className='text-neutral-400'>·</span>
 						<span className='font-semibold text-secondary-900'>
@@ -4640,7 +4662,7 @@ function SwapCard({ s, onSelect }: { s: Swap; onSelect?: () => void }) {
 				<span className='font-extrabold text-primary-600'>{s.diff} TL</span>
 			</div>
 
-			<div className='flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-500'>
+			<div className='flex flex-wrap items-center justify-between gap-2 text-sm text-neutral-500'>
 				<span>{s.date}</span>
 				<a
 					href='#'
@@ -4774,11 +4796,11 @@ function SwapDetailItemCard({
 					<div className='truncate text-sm font-semibold text-secondary-900'>
 						{item.title}
 					</div>
-					<div className='truncate text-xs text-neutral-500'>{item.qty}</div>
+					<div className='truncate text-sm text-neutral-500'>{item.qty}</div>
 				</div>
 			</div>
 			<div className='border-t border-neutral-200 pt-3'>
-				<div className='text-xs font-medium text-neutral-500'>Toplam Değer</div>
+				<div className='text-sm font-medium text-neutral-500'>Toplam Değer</div>
 				<div className='mt-0.5 text-xl font-extrabold text-secondary-900'>
 					{item.total} TL
 				</div>
@@ -4845,15 +4867,15 @@ function SwapDetailMain({ onSwaps }: { onSwaps?: () => void }) {
 			{/* Nakit Fark */}
 			<div className='flex flex-wrap items-center justify-between gap-3 rounded-xl border border-success-200 bg-success-50 p-5'>
 				<div>
-					<div className='text-xs font-medium text-success-700'>Nakit Fark</div>
+					<div className='text-sm font-medium text-success-700'>Nakit Fark</div>
 					<div className='mt-0.5 text-2xl font-extrabold text-success-700'>
 						{detailSwap.cashDiff} TL
 					</div>
-					<div className='mt-1 text-xs text-success-600'>
+					<div className='mt-1 text-sm text-success-600'>
 						Komisyon dahil toplam: {detailSwap.cashDiffWithCommission} TL
 					</div>
 				</div>
-				<div className='flex items-center gap-3 text-xs text-neutral-600'>
+				<div className='flex items-center gap-3 text-sm text-neutral-600'>
 					<span>{detailSwap.cashPayer} ödeyecek</span>
 					{detailSwap.cashPaid ? (
 						<Badge variant='successSoft'>
@@ -4878,7 +4900,7 @@ function SwapDetailMain({ onSwaps }: { onSwaps?: () => void }) {
 						<div
 							key={i}
 							className='space-y-1'>
-							<div className='text-xs font-bold text-secondary-900'>
+							<div className='text-sm font-bold text-secondary-900'>
 								{m.from}:
 							</div>
 							<div className='rounded-xl bg-background p-3 text-sm text-secondary-900'>
@@ -4900,7 +4922,7 @@ function SwapDetailMain({ onSwaps }: { onSwaps?: () => void }) {
 						<div
 							key={i}
 							className='flex flex-col gap-1 rounded-xl bg-background p-3 sm:flex-row sm:items-center sm:gap-3'>
-							<span className='text-xs font-bold text-secondary-900 sm:min-w-[180px]'>
+							<span className='text-sm font-bold text-secondary-900 sm:min-w-[180px]'>
 								{sh.from}:
 							</span>
 							<span className='text-sm text-neutral-600'>
@@ -4919,7 +4941,7 @@ function SwapDetailMain({ onSwaps }: { onSwaps?: () => void }) {
 				<Clock className='mt-0.5 size-4 shrink-0' />
 				<div>
 					<div className='font-semibold'>Yanıt Süresi</div>
-					<div className='mt-0.5 text-xs text-warning-600'>
+					<div className='mt-0.5 text-sm text-warning-600'>
 						Takas tamamlandığı için süre takibi sona erdi.
 					</div>
 				</div>
@@ -5035,7 +5057,7 @@ function CreateSwapMain({ onBack }: { onBack?: () => void }) {
 						<h2 className='font-display text-sm font-bold text-secondary-900'>
 							Teklif Edeceğin Ürünler
 						</h2>
-						<span className='text-xs font-semibold text-neutral-500'>
+						<span className='text-sm font-semibold text-neutral-500'>
 							{selected.length} / 4
 						</span>
 					</div>
@@ -5049,7 +5071,7 @@ function CreateSwapMain({ onBack }: { onBack?: () => void }) {
 										type='button'
 										className='flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-neutral-200 text-neutral-400 transition hover:border-primary-300 hover:text-primary-600'>
 										<Plus className='size-6' />
-										<span className='text-xs font-semibold'>Ürün Ekle</span>
+										<span className='text-sm font-semibold'>Ürün Ekle</span>
 									</button>
 								);
 							}
@@ -5075,7 +5097,7 @@ function CreateSwapMain({ onBack }: { onBack?: () => void }) {
 										</button>
 									</div>
 									<div className='px-1'>
-										<div className='line-clamp-1 text-xs font-semibold text-secondary-900'>
+										<div className='line-clamp-1 text-sm font-semibold text-secondary-900'>
 											{c.title}
 										</div>
 										<div className='text-sm font-extrabold text-primary-600'>
@@ -5095,7 +5117,7 @@ function CreateSwapMain({ onBack }: { onBack?: () => void }) {
 					Fark Tutarı{' '}
 					<span className='font-medium text-neutral-500'>(İsteğe bağlı)</span>
 				</h2>
-				<p className='mt-1 text-xs text-neutral-500'>
+				<p className='mt-1 text-sm text-neutral-500'>
 					Takas değerini dengelemek için nakit fark ekleyebilirsin.
 				</p>
 				<div className='relative mt-3 max-w-xs'>
@@ -5124,7 +5146,7 @@ function CreateSwapMain({ onBack }: { onBack?: () => void }) {
 					placeholder='Satıcıya mesajını yaz…'
 					className='mt-3 w-full rounded-lg border border-neutral-200 bg-background px-3 py-2 text-sm text-secondary-900 placeholder:text-neutral-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30'
 				/>
-				<div className='mt-1 text-right text-xs text-neutral-400'>
+				<div className='mt-1 text-right text-sm text-neutral-400'>
 					{message.length} / 500
 				</div>
 			</section>
@@ -5431,12 +5453,12 @@ function NotificationCard({ n }: { n: NotificationItem }) {
 				<div className='min-w-0 flex-1'>
 					<div className='flex flex-wrap items-start justify-between gap-2'>
 						<h3 className='text-sm font-bold text-secondary-900'>{n.title}</h3>
-						<span className='text-xs text-neutral-500'>{n.date}</span>
+						<span className='text-sm text-neutral-500'>{n.date}</span>
 					</div>
 					<p className='mt-0.5 text-sm text-neutral-600'>{n.description}</p>
 					<button
 						type='button'
-						className='mt-2 inline-flex items-center gap-1 text-xs font-semibold text-primary-600 transition hover:text-primary-700'>
+						className='mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition hover:text-primary-700'>
 						Detayları gör <ChevronRight className='size-3' />
 					</button>
 				</div>
@@ -5647,12 +5669,12 @@ function ProfileMenu({
 						<div className='truncate text-sm font-bold text-secondary-900'>
 							Ahmet Koleksiyoncu
 						</div>
-						<div className='truncate text-xs text-neutral-500'>
+						<div className='truncate text-sm text-neutral-500'>
 							ahmet@demo.com
 						</div>
 						<Badge
 							variant='primarySoft'
-							className='mt-1 text-[10px]'>
+							className='mt-1 text-sm'>
 							PREMIUM
 						</Badge>
 					</div>
@@ -5722,10 +5744,10 @@ function ProfileSection({
 								{it.icon}
 							</span>
 							<span className='min-w-0'>
-								<span className='block truncate text-sm font-semibold text-secondary-900'>
+								<span className='block truncate text-md font-semibold text-secondary-900'>
 									{it.label}
 								</span>
-								<span className='block truncate text-xs text-neutral-500'>
+								<span className='block truncate text-sm text-neutral-500'>
 									{it.caption}
 								</span>
 							</span>
@@ -5810,7 +5832,7 @@ function ProfileMain({
 							<div className='mt-1 text-sm text-neutral-600'>
 								ahmet@demo.com
 							</div>
-							<div className='text-xs text-neutral-500'>
+							<div className='text-sm text-neutral-500'>
 								Üyelik tarihi: 15.03.2026
 							</div>
 						</div>
@@ -5837,7 +5859,7 @@ function ProfileMain({
 								<div className='text-2xl font-extrabold text-secondary-900'>
 									{s.value}
 								</div>
-								<div className='text-xs font-medium text-neutral-500'>
+								<div className='text-sm font-medium text-neutral-500'>
 									{s.label}
 								</div>
 							</div>
@@ -5855,7 +5877,7 @@ function ProfileMain({
 							<h3 className='text-base font-bold text-secondary-900'>
 								Premium Üyelik
 							</h3>
-							<p className='text-xs text-neutral-500'>
+							<p className='text-sm text-neutral-500'>
 								Aktif üyeliğin koleksiyon yolculuğuna güç katıyor
 							</p>
 						</div>
@@ -5870,7 +5892,7 @@ function ProfileMain({
 							<div className='text-xl font-extrabold text-secondary-900 sm:text-2xl'>
 								{s.value}
 							</div>
-							<div className='mt-0.5 text-[11px] font-medium text-neutral-500'>
+							<div className='mt-0.5 text-sm font-medium text-neutral-500'>
 								{s.label}
 							</div>
 						</div>
@@ -5880,7 +5902,7 @@ function ProfileMain({
 					{['Takas', 'Koleksiyon', 'Reklamsız'].map((t) => (
 						<span
 							key={t}
-							className='inline-flex items-center gap-1 rounded-md bg-background px-2.5 py-1 text-xs font-semibold text-primary-700'>
+							className='inline-flex items-center gap-1 rounded-md bg-background px-2.5 py-1 text-sm font-semibold text-primary-700'>
 							<Check
 								className='size-3'
 								strokeWidth={3}
@@ -5929,7 +5951,7 @@ function ProfileMain({
 								<div className='text-2xl font-extrabold text-secondary-900'>
 									{s.value}
 								</div>
-								<div className='text-xs font-medium text-neutral-500'>
+								<div className='text-sm font-medium text-neutral-500'>
 									{s.label}
 								</div>
 							</div>
@@ -6077,7 +6099,7 @@ function NotificationToggle({
 			</span>
 			<div className='min-w-0 flex-1'>
 				<div className='text-sm font-semibold text-secondary-900'>{title}</div>
-				<div className='text-xs text-neutral-500'>{description}</div>
+				<div className='text-sm text-neutral-500'>{description}</div>
 			</div>
 			<button
 				type='button'
@@ -6139,7 +6161,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							<div className='text-base font-bold text-secondary-900'>
 								Profil Fotoğrafı
 							</div>
-							<p className='mt-0.5 text-xs text-neutral-500'>
+							<p className='mt-0.5 text-sm text-neutral-500'>
 								JPG, PNG veya SVG, en fazla 2MB. Kare format önerilir.
 							</p>
 							<div className='mt-3 flex flex-wrap justify-center gap-2 sm:justify-start'>
@@ -6211,7 +6233,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							defaultValue='Hot Wheels tutkunu, 15 yıllık koleksiyoncu.'
 							className='w-full rounded-lg border border-neutral-200 bg-background px-3 py-2 text-sm text-secondary-900 placeholder:text-neutral-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30'
 						/>
-						<div className='mt-1 text-right text-xs text-neutral-400'>
+						<div className='mt-1 text-right text-sm text-neutral-400'>
 							42 / 500
 						</div>
 					</FormField>
@@ -6236,7 +6258,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							className='h-9 gap-2'>
 							<Plus className='size-4' />
 							Yeni Adres
-							<span className='ml-1 rounded-md bg-background/20 px-1.5 text-[10px] font-bold text-primary-foreground'>
+							<span className='ml-1 rounded-md bg-background/20 px-1.5 text-sm font-bold text-primary-foreground'>
 								{userAddresses.length}/3
 							</span>
 						</Button>
@@ -6257,7 +6279,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 										<div className='text-sm font-semibold text-secondary-900'>
 											{a.name}
 										</div>
-										<div className='text-xs text-neutral-500'>{a.phone}</div>
+										<div className='text-sm text-neutral-500'>{a.phone}</div>
 										<div className='text-sm text-neutral-600'>{a.full}</div>
 									</div>
 									<div className='flex shrink-0 items-center gap-1'>
@@ -6338,7 +6360,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							</div>
 						</FormField>
 					</div>
-					<div className='rounded-xl border border-neutral-200 bg-background p-3 text-xs text-neutral-600'>
+					<div className='rounded-xl border border-neutral-200 bg-background p-3 text-sm text-neutral-600'>
 						<div className='font-semibold text-secondary-900'>
 							Yeni şifre gereksinimleri:
 						</div>
@@ -6431,7 +6453,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							<div className='text-sm font-semibold text-secondary-900'>
 								İki Faktörlü Doğrulama
 							</div>
-							<div className='text-xs text-neutral-500'>
+							<div className='text-sm text-neutral-500'>
 								Ekstra güvenlik katmanı ekleyin
 							</div>
 						</div>
@@ -6455,7 +6477,7 @@ function ProfileEditMain({ onBack }: { onBack?: () => void }) {
 							<div className='text-sm font-bold text-secondary-900'>
 								Hesabı Sil
 							</div>
-							<div className='text-xs text-neutral-600'>
+							<div className='text-sm text-neutral-600'>
 								Hesabınız ve tüm verileriniz kalıcı olarak silinir.
 							</div>
 						</div>
@@ -6678,7 +6700,7 @@ function MyListingCard({
 }) {
 	const isPassive = l.status === 'passive' || l.status === 'sold';
 	return (
-		<div className='group flex flex-col gap-3 rounded-2xl bg-neutral-50 p-3 transition hover:bg-neutral-100'>
+		<div className='group flex flex-col gap-3 rounded-2xl bg-neutral-50 p-3 transition duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:bg-neutral-100 hover:shadow-[8px_8px_0_0_var(--primary-500)]'>
 			<div
 				className={`relative aspect-square overflow-hidden rounded-xl bg-gradient-to-br ${l.tone}`}>
 				<img
@@ -6698,7 +6720,7 @@ function MyListingCard({
 			</div>
 
 			<div className='space-y-1.5 px-1 pb-1'>
-				<div className='flex items-center gap-3 text-[11px] font-semibold text-neutral-500 sm:text-xs'>
+				<div className='flex items-center gap-3 text-sm font-semibold text-neutral-500 sm:text-sm'>
 					<span className='flex items-center gap-1'>
 						<Heart className='size-3 text-primary-500 sm:size-3.5' />
 						{l.likes}
@@ -6720,7 +6742,7 @@ function MyListingCard({
 					<button
 						type='button'
 						onClick={onEdit}
-						className='inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg border border-neutral-200 bg-background text-xs font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600 sm:text-sm'>
+						className='inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg border border-neutral-200 bg-background text-sm font-semibold text-secondary-900 transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600 sm:text-sm'>
 						{isPassive ? (
 							<>
 								<Repeat className='size-3.5' />
@@ -6736,7 +6758,7 @@ function MyListingCard({
 					<button
 						type='button'
 						onClick={onToggleStatus}
-						className='inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary-500 text-xs font-semibold text-primary-foreground transition hover:bg-primary-600 sm:text-sm'>
+						className='inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary-500 text-sm font-semibold text-primary-foreground transition hover:bg-primary-600 sm:text-sm'>
 						{isPassive ? (
 							<>
 								<Zap
@@ -6827,7 +6849,7 @@ function MyListingsMain({
 							}`}>
 							{f.label}
 							<span
-								className={`rounded-md px-1.5 text-[10px] font-bold ${
+								className={`rounded-md px-1.5 text-sm font-bold ${
 									active
 										? 'bg-background/20 text-primary-foreground'
 										: 'bg-background text-neutral-600'
@@ -6973,7 +6995,7 @@ function OfferRow({ o }: { o: OfferItem }) {
 						<span className='mt-0.5 inline-block h-5 w-1 shrink-0 rounded-full bg-primary-500' />
 						<span className='line-clamp-2 break-words'>{o.productTitle}</span>
 					</h2>
-					<div className='mt-1 pl-3 text-xs text-neutral-500'>
+					<div className='mt-1 pl-3 text-sm text-neutral-500'>
 						{o.productMeta}
 					</div>
 				</div>
@@ -6994,7 +7016,7 @@ function OfferRow({ o }: { o: OfferItem }) {
 				<div className='min-w-0 flex-1 space-y-2'>
 					<div className='flex flex-wrap items-baseline gap-x-5 gap-y-2'>
 						<div>
-							<div className='text-[11px] font-medium text-neutral-500'>
+							<div className='text-sm font-medium text-neutral-500'>
 								Verilen Teklif
 							</div>
 							<div className='mt-0.5 text-lg font-extrabold text-primary-600 sm:text-xl'>
@@ -7002,7 +7024,7 @@ function OfferRow({ o }: { o: OfferItem }) {
 							</div>
 						</div>
 						<div>
-							<div className='text-[11px] font-medium text-neutral-500'>
+							<div className='text-sm font-medium text-neutral-500'>
 								Liste Fiyatı
 							</div>
 							<div className='mt-0.5 text-sm font-semibold text-secondary-900 sm:text-base'>
@@ -7010,7 +7032,7 @@ function OfferRow({ o }: { o: OfferItem }) {
 							</div>
 						</div>
 					</div>
-					<div className='flex min-w-0 items-center gap-1.5 text-xs text-neutral-500'>
+					<div className='flex min-w-0 items-center gap-1.5 text-sm text-neutral-500'>
 						<User className='size-3.5 shrink-0' />
 						<span className='truncate'>{o.from}</span>
 					</div>
@@ -7105,7 +7127,7 @@ function OffersMain({ onBack }: { onBack?: () => void }) {
 							<div className='text-2xl font-extrabold text-secondary-900'>
 								{s.value}
 							</div>
-							<div className='text-xs font-medium text-neutral-500'>
+							<div className='text-sm font-medium text-neutral-500'>
 								{s.label}
 							</div>
 						</div>
@@ -7128,7 +7150,7 @@ function OffersMain({ onBack }: { onBack?: () => void }) {
 							}`}>
 							{t.label}
 							<span
-								className={`rounded-md px-1.5 text-[10px] font-bold ${
+								className={`rounded-md px-1.5 text-sm font-bold ${
 									active
 										? 'bg-background/20 text-primary-foreground'
 										: 'bg-background text-neutral-600'
@@ -7266,7 +7288,7 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 						<div className='text-base font-bold text-secondary-900'>
 							Mesajlar
 						</div>
-						<div className='text-xs text-neutral-500'>
+						<div className='text-sm text-neutral-500'>
 							{chatPreviews.length} sohbet
 						</div>
 					</div>
@@ -7281,7 +7303,7 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 									className={`flex w-full items-start gap-3 border-b border-neutral-200 p-4 text-left transition ${
 										isActive ? 'bg-primary-50' : 'hover:bg-neutral-50'
 									}`}>
-									<span className='grid size-9 shrink-0 place-items-center rounded-full bg-primary-500 text-xs font-extrabold text-primary-foreground'>
+									<span className='grid size-9 shrink-0 place-items-center rounded-full bg-primary-500 text-sm font-extrabold text-primary-foreground'>
 										{c.initials}
 									</span>
 									<div className='min-w-0 flex-1'>
@@ -7289,15 +7311,15 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 											<span className='truncate text-sm font-bold text-secondary-900'>
 												{c.name}
 											</span>
-											<span className='shrink-0 text-[10px] font-medium text-neutral-500'>
+											<span className='shrink-0 text-sm font-medium text-neutral-500'>
 												{c.time}
 											</span>
 										</div>
-										<div className='mt-0.5 truncate text-[11px] font-semibold text-primary-600'>
+										<div className='mt-0.5 truncate text-sm font-semibold text-primary-600'>
 											{c.productTitle}
 										</div>
 										<p
-											className={`mt-1 line-clamp-2 text-xs ${
+											className={`mt-1 line-clamp-2 text-sm ${
 												c.unread
 													? 'font-semibold text-secondary-900'
 													: 'text-neutral-500'
@@ -7316,14 +7338,14 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 					{active ? (
 						<>
 							<div className='flex items-center gap-3 border-b border-neutral-200 p-4'>
-								<span className='grid size-10 shrink-0 place-items-center rounded-full bg-primary-500 text-xs font-extrabold text-primary-foreground'>
+								<span className='grid size-10 shrink-0 place-items-center rounded-full bg-primary-500 text-sm font-extrabold text-primary-foreground'>
 									{active.initials}
 								</span>
 								<div className='min-w-0'>
 									<div className='truncate text-sm font-bold text-secondary-900'>
 										{active.name}
 									</div>
-									<div className='flex items-center gap-1 truncate text-xs text-primary-600'>
+									<div className='flex items-center gap-1 truncate text-sm text-primary-600'>
 										<Tag className='size-3' />
 										{active.productTitle}
 									</div>
@@ -7344,7 +7366,7 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 											}`}>
 											<div>{m.text}</div>
 											<div
-												className={`mt-1 text-right text-[10px] font-medium ${
+												className={`mt-1 text-right text-sm font-medium ${
 													m.from === 'self'
 														? 'text-primary-foreground/80'
 														: 'text-neutral-500'
@@ -7365,7 +7387,7 @@ function MessagesMain({ onBack }: { onBack?: () => void }) {
 											placeholder='Mesajınızı yazın…'
 											className='w-full resize-none rounded-lg border border-neutral-200 bg-background px-3 py-2.5 text-sm text-secondary-900 placeholder:text-neutral-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30'
 										/>
-										<div className='mt-1 text-right text-[10px] text-neutral-400'>
+										<div className='mt-1 text-right text-sm text-neutral-400'>
 											{draft.length}/1000
 										</div>
 									</div>
@@ -7474,7 +7496,7 @@ function OrderCard({ o }: { o: OrderItem }) {
 						<span className='inline-block h-5 w-1 shrink-0 rounded-full bg-primary-500' />
 						<span className='truncate'>Sipariş #{o.id}</span>
 					</h2>
-					<div className='mt-1 pl-3 text-xs text-neutral-500'>{o.date}</div>
+					<div className='mt-1 pl-3 text-sm text-neutral-500'>{o.date}</div>
 				</div>
 				<OrderStatusBadge status={o.status} />
 			</header>
@@ -7495,13 +7517,13 @@ function OrderCard({ o }: { o: OrderItem }) {
 						<div className='line-clamp-2 text-sm font-bold text-secondary-900 sm:text-base'>
 							{o.productTitle}
 						</div>
-						<div className='mt-0.5 text-xs text-neutral-500'>
+						<div className='mt-0.5 text-sm text-neutral-500'>
 							{o.qty} adet × {o.unitPrice} TL
 						</div>
 					</div>
 				</div>
 				<div className='border-t border-neutral-200 pt-3 sm:border-t-0 sm:pt-0 sm:text-right'>
-					<div className='text-xs font-medium text-neutral-500'>Toplam</div>
+					<div className='text-sm font-medium text-neutral-500'>Toplam</div>
 					<div className='text-lg font-extrabold text-secondary-900 sm:text-xl'>
 						{o.total} TL
 					</div>
@@ -7510,12 +7532,12 @@ function OrderCard({ o }: { o: OrderItem }) {
 
 			{/* Satıcı + kargo bilgisi */}
 			<div className='grid gap-2 sm:grid-cols-2'>
-				<div className='rounded-xl bg-background px-3 py-2.5 text-xs'>
+				<div className='rounded-xl bg-background px-3 py-2.5 text-sm'>
 					<span className='text-neutral-500'>Satıcı: </span>
 					<span className='font-semibold text-secondary-900'>{o.seller}</span>
 				</div>
 				{isShipped && o.cargo ? (
-					<div className='space-y-0.5 rounded-xl bg-background px-3 py-2.5 text-xs'>
+					<div className='space-y-0.5 rounded-xl bg-background px-3 py-2.5 text-sm'>
 						<div>
 							<span className='text-neutral-500'>Kargo Firması: </span>
 							<span className='font-semibold text-secondary-900'>
@@ -7784,7 +7806,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 							<Calendar className='size-4' />
 						</span>
 						<div className='min-w-0'>
-							<div className='text-xs font-medium text-neutral-500'>
+							<div className='text-sm font-medium text-neutral-500'>
 								Üyelik Başlangıç Tarihi
 							</div>
 							<div className='text-sm font-bold text-secondary-900'>
@@ -7797,7 +7819,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 							<Calendar className='size-4' />
 						</span>
 						<div className='min-w-0'>
-							<div className='text-xs font-medium text-neutral-500'>
+							<div className='text-sm font-medium text-neutral-500'>
 								Yenilenme Tarihi
 							</div>
 							<div className='text-sm font-bold text-secondary-900'>
@@ -7815,7 +7837,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 						</div>
 						<button
 							type='button'
-							className='text-xs font-semibold text-primary-600 transition hover:text-primary-700'>
+							className='text-sm font-semibold text-primary-600 transition hover:text-primary-700'>
 							Kart Yönetimi
 						</button>
 					</div>
@@ -7823,7 +7845,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 						<div className='text-sm font-bold text-warning-800'>
 							Henüz kayıtlı kartınız yok
 						</div>
-						<p className='mt-0.5 text-xs text-warning-700'>
+						<p className='mt-0.5 text-sm text-warning-700'>
 							Üyeliğinizin otomatik yenilenmesi için bir kart eklemeniz
 							gerekmektedir.
 						</p>
@@ -7860,7 +7882,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 						}`}>
 						Yıllık
 						<span
-							className={`rounded-md px-1.5 text-[10px] font-bold ${
+							className={`rounded-md px-1.5 text-sm font-bold ${
 								billing === 'yearly'
 									? 'bg-background/20 text-primary-foreground'
 									: 'bg-success-100 text-success-700'
@@ -7899,7 +7921,7 @@ function MembershipMain({ onBack }: { onBack?: () => void }) {
 								<h3 className='text-lg font-extrabold text-secondary-900'>
 									{p.title}
 								</h3>
-								<p className='mt-0.5 text-xs text-neutral-500'>{p.subtitle}</p>
+								<p className='mt-0.5 text-sm text-neutral-500'>{p.subtitle}</p>
 							</div>
 							<div className='flex items-baseline gap-1'>
 								<span className='text-3xl font-extrabold text-secondary-900'>

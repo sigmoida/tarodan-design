@@ -154,7 +154,7 @@
  * Hiçbir hex değer içermez — yalnızca :root değişkenlerine pointer.
  * ------------------------------------------------------------------------ */
 @theme inline {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Zilla Slab", ui-serif, Georgia, serif;
 
   --color-primary-50:  var(--primary-50);
