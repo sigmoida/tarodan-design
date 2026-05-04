@@ -1,0 +1,120 @@
+/* ---------------------------------------------------------------------------
+ * V2 — Etec/Behance minimal tasarım dili.
+ * CSS variable'lar `.v2-root` altında scope'lanmıştır; V1'e sızmaz.
+ * Class'lar global ama "v2-" prefix'li olduğu için V1 ile çakışmaz.
+ * ------------------------------------------------------------------------ */
+.v2-root {
+  --v2-bg: #ffffff;
+  --v2-surface: #f5f6f8;
+  --v2-surface-2: #ecedf0;
+  --v2-surface-3: #dfe1e5;
+  --v2-ink: #0a0a0a;
+  --v2-ink-soft: #1f1f1f;
+  --v2-ink-muted: #6b7280;
+  --v2-ink-faint: #9ca3af;
+  --v2-border: #e5e7eb;
+  --v2-border-strong: #d1d5db;
+  --v2-border-ink: #0a0a0a;
+  --v2-accent: #ff6b1a;
+  --v2-accent-soft: #fff3ec;
+  --v2-success: #10b981;
+  --v2-success-soft: #d1fae5;
+  --v2-danger: #ef4444;
+  --v2-danger-soft: #fee2e2;
+  --v2-warning: #f59e0b;
+
+  --v2-radius-card: 12px;
+  --v2-radius-card-lg: 16px;
+  --v2-radius-input: 10px;
+  --v2-radius-sm: 6px;
+  --v2-radius-pill: 999px;
+
+  --v2-font-sans: 'Geist', 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --v2-container: 1240px;
+  --v2-ring: 0 0 0 3px rgba(10, 10, 10, 0.08);
+  --v2-transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: var(--v2-font-sans);
+  color: var(--v2-ink);
+  background: var(--v2-bg);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01', 'cv11';
+  letter-spacing: -0.01em;
+}
+
+.v2-root,
+.v2-root * {
+  box-sizing: border-box;
+}
+
+/* Backgrounds */
+.bg-v2-bg { background-color: var(--v2-bg); }
+.bg-v2-surface { background-color: var(--v2-surface); }
+.bg-v2-surface-2 { background-color: var(--v2-surface-2); }
+.bg-v2-surface-3 { background-color: var(--v2-surface-3); }
+.bg-v2-ink { background-color: var(--v2-ink); }
+.bg-v2-ink-soft { background-color: var(--v2-ink-soft); }
+.bg-v2-accent { background-color: var(--v2-accent); }
+.bg-v2-accent-soft { background-color: var(--v2-accent-soft); }
+.bg-v2-success-soft { background-color: var(--v2-success-soft); }
+.bg-v2-danger-soft { background-color: var(--v2-danger-soft); }
+
+.hover\:bg-v2-bg:hover { background-color: var(--v2-bg); }
+.hover\:bg-v2-surface:hover { background-color: var(--v2-surface); }
+.hover\:bg-v2-surface-2:hover { background-color: var(--v2-surface-2); }
+.hover\:bg-v2-ink:hover { background-color: var(--v2-ink); }
+.hover\:bg-v2-ink-soft:hover { background-color: var(--v2-ink-soft); }
+.hover\:bg-v2-danger-soft:hover { background-color: var(--v2-danger-soft); }
+
+/* Text */
+.text-v2-ink { color: var(--v2-ink); }
+.text-v2-ink-soft { color: var(--v2-ink-soft); }
+.text-v2-muted { color: var(--v2-ink-muted); }
+.text-v2-faint { color: var(--v2-ink-faint); }
+.text-v2-accent { color: var(--v2-accent); }
+.text-v2-success { color: var(--v2-success); }
+.text-v2-danger { color: var(--v2-danger); }
+.text-v2-on-ink { color: var(--v2-bg); }
+
+.hover\:text-v2-ink:hover { color: var(--v2-ink); }
+.hover\:text-v2-muted:hover { color: var(--v2-ink-muted); }
+.hover\:text-v2-accent:hover { color: var(--v2-accent); }
+.hover\:text-v2-danger:hover { color: var(--v2-danger); }
+.hover\:text-v2-on-ink:hover { color: var(--v2-bg); }
+
+.placeholder\:text-v2-faint::placeholder { color: var(--v2-ink-faint); }
+
+/* Borders */
+.border-v2 { border-color: var(--v2-border); }
+.border-v2-strong { border-color: var(--v2-border-strong); }
+.border-v2-ink { border-color: var(--v2-border-ink); }
+
+.hover\:border-v2-ink:hover { border-color: var(--v2-border-ink); }
+.focus\:border-v2-strong:focus { border-color: var(--v2-border-strong); }
+
+/* Radius */
+.rounded-v2-card { border-radius: var(--v2-radius-card); }
+.rounded-v2-card-lg { border-radius: var(--v2-radius-card-lg); }
+.rounded-v2-input { border-radius: var(--v2-radius-input); }
+.rounded-v2-sm { border-radius: var(--v2-radius-sm); }
+.rounded-v2-pill { border-radius: var(--v2-radius-pill); }
+
+/* Ring */
+.ring-v2 { box-shadow: var(--v2-ring); }
+.focus\:ring-v2:focus { box-shadow: var(--v2-ring); }
+
+/* Font */
+.font-v2 { font-family: var(--v2-font-sans); }
+
+/* Layout helpers */
+.v2-container {
+  max-width: var(--v2-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.v2-hairline {
+  border-top: 1px solid var(--v2-border);
+}
